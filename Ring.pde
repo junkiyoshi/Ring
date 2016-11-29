@@ -4,6 +4,7 @@ void setup()
 {
   size(1280, 720);
   background(0);
+  frameRate(30);
   
   for(int i = 0; i < movers.length; i++)
   {

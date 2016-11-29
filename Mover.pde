@@ -32,8 +32,13 @@ class Mover
     float x = map(location.x, center.x - range, center.x + range, 0.01, -0.01);
     float y = map(location.y, center.y - range, center.y + range, 0.01, -0.01);
     applyForce(new PVector(x, y));
+  
+    velocity.add(acceleration);  
+    PVector friction = velocity.copy();
+    friction.mult(-1);
+    friction.normalize();
+    velocity.add(friction);
     
-    velocity.add(acceleration);
     location.add(velocity);
     acceleration.mult(0);
   }
