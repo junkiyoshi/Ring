@@ -4,7 +4,7 @@ class Mover
   PVector location;
   PVector velocity;
   PVector acceleration;
-  float range = 100;
+  float range = 200;
   
   color bodyColor;
   float bodySize;
@@ -17,7 +17,7 @@ class Mover
     acceleration = new PVector(0, 0);
     
     bodyColor = color(random(128, 255), random(128, 255), random(128, 255));
-    bodySize = random(20, 30);
+    bodySize = random(0.1, 2);
   }
   
   void applyForce(PVector force)
@@ -47,7 +47,7 @@ class Mover
   {
     noStroke();
    
-    fill(bodyColor, 128);
+    fill(bodyColor, 200);
     ellipse(location.x, location.y, bodySize, bodySize);
   }
 }
